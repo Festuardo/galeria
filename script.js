@@ -5,15 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = [
         'images/1.jpg',
         'images/2.jpg',
-        'images/3.jpg'
+	'images/3.jpg',
+	'images/4.jpg',
+	'images/5.jpg',
+        'images/6.jpg'
         // Agrega más imágenes según las que tengas en la carpeta 'images'
     ];
     
     images.forEach((src) => {
         const img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Imagen de la galería';
-        img.onclick = () => openImageInFullScreen(src);
+        img.src = src; // Ruta de la imagen
+        img.alt = 'Imagen de la galería'; // Texto alternativo
+        img.loading = 'lazy'; // Lazy loading activado
+        img.onclick = () => openImageInFullScreen(src); // Acción al hacer clic
         gallery.appendChild(img);
     });
 });
